@@ -1,8 +1,6 @@
 package org.example.util;
 
-import org.example.entities.ClientEntity;
-import org.example.entities.OrderStatusEntity;
-import org.example.entities.OrderEntity;
+import org.example.entities.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -16,6 +14,8 @@ public class HibernateUtil {
             configuration.addAnnotatedClass(ClientEntity.class);
             configuration.addAnnotatedClass(OrderStatusEntity.class);
             configuration.addAnnotatedClass(OrderEntity.class);
+            configuration.addAnnotatedClass(OrderServiceEntity.class);
+            configuration.addAnnotatedClass(ServiceEntity.class);
             sessionFactory = configuration.buildSessionFactory();
             return sessionFactory;
         }
